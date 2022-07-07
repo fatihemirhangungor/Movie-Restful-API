@@ -1,4 +1,4 @@
-using film_api.data;
+using film_api.data.Models ;
 using film_api.data.Redis;
 using film_api.repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -16,7 +16,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 //DB CONTEXT IMPLEMENTATION
-builder.Services.AddDbContext<MovieDataContext>(
+builder.Services.AddDbContext<DatabaseContext>(
     o => o.UseNpgsql(builder.Configuration.GetConnectionString("MoviesDB"))
     );
 
@@ -24,7 +24,7 @@ builder.Services.AddDbContext<MovieDataContext>(
 builder.Services.AddSingleton<IRedisHelper, RedisHelper>();
 
 //REPOSITORY IMPLEMENT
-builder.Services.AddScoped<IMovieRepository, MovieRepository>();
+builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
 
 //JWT AUTHENTICATION
 var key = Encoding.ASCII.GetBytes(builder.Configuration["Application:JWTSecret"]);

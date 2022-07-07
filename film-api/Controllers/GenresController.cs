@@ -1,7 +1,7 @@
-﻿using film_api.data;
+﻿using film_api.data.Models;
 using film_api.repository;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace film_api.Controllers
 {
@@ -9,16 +9,17 @@ namespace film_api.Controllers
     [ApiController]
     public class GenresController : ControllerBase
     {
-        private readonly IMovieRepository _movieRepository;
+        private readonly IRepositoryWrapper _repositoryWrapper;
 
-        public GenresController(IMovieRepository movieRepository)
+        public GenresController(IRepositoryWrapper repositoryWrapper)
         {
-            _movieRepository = movieRepository;
+            _repositoryWrapper = repositoryWrapper;
         }
+
         [HttpGet]
-        public async Task<IEnumerable<Movie>> ListGenres()
+        public IEnumerable<string> ListGenres()
         {
-            return await _movieRepository.Get();
+            return _repositoryWrapper.Movie.ListGenres();
         }
     }
 }

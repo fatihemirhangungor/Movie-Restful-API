@@ -1,18 +1,8 @@
-﻿using film_api.data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using film_api.data.Models;
 
 namespace film_api.repository
 {
-    public interface IMovieRepository
+    public interface IMovieRepository : IRepositoryBase<MovieDto>
     {
-        Task<IEnumerable<Movie>> Get();
-        Task<Movie> Get(int id);
-        Task<Movie> Create(Movie movie);
-        Task Update(Movie movie);
-        Task Delete(int id);
     }
 }

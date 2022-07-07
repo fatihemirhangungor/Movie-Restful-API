@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using film_api.data;
+using film_api.data.Models;
 
 #nullable disable
 
 namespace film_api.data.Migrations
 {
-    [DbContext(typeof(MovieDataContext))]
+    [DbContext(typeof(DatabaseContext))]
     partial class MovieDataContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

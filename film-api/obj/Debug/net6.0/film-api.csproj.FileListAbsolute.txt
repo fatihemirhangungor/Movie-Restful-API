@@ -535,7 +535,6 @@ D:\repos\Movie-Restful-API\film-api\obj\Debug\net6.0\film-api.GeneratedMSBuildEd
 D:\repos\Movie-Restful-API\film-api\obj\Debug\net6.0\film-api.AssemblyInfoInputs.cache
 D:\repos\Movie-Restful-API\film-api\obj\Debug\net6.0\film-api.AssemblyInfo.cs
 D:\repos\Movie-Restful-API\film-api\obj\Debug\net6.0\film-api.csproj.CoreCompileInputs.cache
-D:\repos\Movie-Restful-API\film-api\obj\Debug\net6.0\film-api.MvcApplicationPartsAssemblyInfo.cs
 D:\repos\Movie-Restful-API\film-api\obj\Debug\net6.0\film-api.MvcApplicationPartsAssemblyInfo.cache
 D:\repos\Movie-Restful-API\film-api\obj\Debug\net6.0\staticwebassets.build.json
 D:\repos\Movie-Restful-API\film-api\obj\Debug\net6.0\staticwebassets.development.json
