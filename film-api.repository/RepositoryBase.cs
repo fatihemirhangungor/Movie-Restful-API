@@ -40,10 +40,5 @@ namespace film_api.repository
             dbContext.Set<T>().Update(entity);
             dbContext.SaveChanges();
         }
-
-        //public IEnumerable<string> ListGenres()
-        //{
-        //    return (IEnumerable<string>)dbContext.Movies.Where(x => x.Id == id);
-        //}
     }
 }
