@@ -3,5 +3,6 @@
     public interface IRepositoryWrapper
     {
         IMovieRepository Movie { get; }
+        IGenreRepository Genre { get; }
     }
 }

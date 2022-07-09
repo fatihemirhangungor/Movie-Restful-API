@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using System.Collections;
+using System.Linq.Expressions;
 
 namespace film_api.repository
 {
@@ -9,6 +10,6 @@ namespace film_api.repository
         public void Create(T entity);
         public void Update(T entity);
         public void Delete(T entity);
-        //public IEnumerable<string> ListGenres(); 
+        //public IEnumerable ListGenres();
     }
 }

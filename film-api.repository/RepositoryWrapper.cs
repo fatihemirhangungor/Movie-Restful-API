@@ -6,6 +6,7 @@ namespace film_api.repository
     {
         private DatabaseContext _dbContext;
         private IMovieRepository _movie;
+        private IGenreRepository _genre;
 
         public IMovieRepository Movie
         {
@@ -18,15 +19,21 @@ namespace film_api.repository
                 return _movie;
             }
         }
+        public IGenreRepository Genre
+        {
+            get
+            {
+                if (_genre == null)
+                {
+                    _genre = new GenreRepository(_dbContext);
+                }
+                return _genre;
+            }
+        }
 
         public RepositoryWrapper(DatabaseContext dbContext)
         {
             _dbContext = dbContext;
-        }
-
-        public void Save()
-        {
-            _dbContext.SaveChanges();
         }
     }
 }

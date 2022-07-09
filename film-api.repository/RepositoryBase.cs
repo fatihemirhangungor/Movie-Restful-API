@@ -27,7 +27,9 @@ namespace film_api.repository
 
         public IQueryable<T> Get()
         {
-            return dbContext.Set<T>().AsNoTracking();
+            //return dbContext.Set<T>().AsNoTracking();
+            var result = dbContext.Set<T>().AsNoTracking();
+            return result.Take(5);
         }
 
         public IQueryable<T> Get(Expression<Func<T, bool>> expression)

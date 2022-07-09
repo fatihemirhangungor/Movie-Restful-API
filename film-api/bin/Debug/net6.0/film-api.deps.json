@@ -2358,6 +2358,7 @@
       },
       "film-api.repository/1.0.0": {
         "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
           "film-api.data": "1.0.0"
         },
         "runtime": {
