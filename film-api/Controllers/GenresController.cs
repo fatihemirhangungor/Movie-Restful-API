@@ -1,5 +1,6 @@
 ﻿using film_api.data.Models;
-using film_api.repository;
+using film_api.repository.Abstract;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections;
 
@@ -7,6 +8,7 @@ namespace film_api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class GenresController : ControllerBase
     {
         private readonly IRepositoryWrapper _repositoryWrapper;
@@ -22,17 +24,17 @@ namespace film_api.Controllers
             return _repositoryWrapper.Genre.ListGenres();
         }
         [HttpPost]
-        public void AddGenre(GenreDto genre)
+        public void AddGenre(string genre)
         {
             _repositoryWrapper.Genre.Add(genre);
         }
         [HttpPut]
-        public void UpdateGenre(GenreDto genreToUpdate, [FromBody] GenreDto newGenre)
+        public void UpdateGenre(string genreToUpdate, string newGenre)
         {
             _repositoryWrapper.Genre.Update(genreToUpdate, newGenre);
         }
         [HttpDelete]
-        public void DeleteGenre(GenreDto genre)
+        public void DeleteGenre(string genre)
         {
             _repositoryWrapper.Genre.Delete(genre);
         }

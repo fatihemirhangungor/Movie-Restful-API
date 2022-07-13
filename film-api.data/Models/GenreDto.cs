@@ -4,6 +4,6 @@
     {
         public int Id { get; set; }
         public string ?Name { get; set; }
-        public static HashSet<GenreDto>? genreNames = new HashSet<GenreDto>();
+        public static HashSet<string>? genres = new HashSet<string>();
     }
 }

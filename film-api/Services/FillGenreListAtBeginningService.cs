@@ -1,4 +1,4 @@
-﻿using film_api.repository;
+﻿using film_api.repository.Abstract;
 
 namespace film_api.Services
 {
@@ -11,9 +11,9 @@ namespace film_api.Services
             this.genreRepository = genreRepository;
         }
 
-        public void FillGenreList()
-        {
-            genreRepository.ListGenres();
-        }
+        //public void FillGenreList()
+        //{
+        //    genreRepository.ListGenres();
+        //}
     }
 }

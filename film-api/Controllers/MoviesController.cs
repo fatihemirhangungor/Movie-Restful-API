@@ -1,11 +1,14 @@
 ﻿using film_api.data.Models;
-using film_api.repository;
+using film_api.repository.Abstract;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections;
 
 namespace film_api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class MoviesController : ControllerBase
     {
         private readonly IRepositoryWrapper _repositoryWrapper;
@@ -24,10 +27,25 @@ namespace film_api.Controllers
         {
             return _repositoryWrapper.Movie.Get(x => x.Id == id);
         }
-        [HttpGet("movies/{genre}")]
-        public IEnumerable<MovieDto> GetMovieList(string genre)
+        [HttpGet("genre")]
+        public IEnumerable GetMovieList([FromQuery]GenreDto genreDto)
         {
-            return _repositoryWrapper.Movie.Get(x => x.Genres == genre);
+            return _repositoryWrapper.Movie.GetMovieListByGenre(genreDto);
+        }
+        [HttpGet("rate")]
+        public IEnumerable GetMovieList(decimal rate)
+        {
+            return _repositoryWrapper.Movie.GetMovieListByRate(rate);
+        }
+        [HttpGet("release-date")]
+        public IEnumerable GetMovieListByReleaseDate(string date)
+        {
+            return _repositoryWrapper.Movie.GetMovieListByReleaseDate(date);
+        }
+        [HttpGet("title-rate-year")]
+        public IEnumerable Search(string title, decimal rate, string date)
+        {
+            return _repositoryWrapper.Movie.Search(title, rate, date);
         }
         [HttpPost]
         public void AddMovie([FromBody] MovieDto movie)
