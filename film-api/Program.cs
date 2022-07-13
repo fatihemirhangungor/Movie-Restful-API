@@ -18,28 +18,32 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    // Bearer token authentication
+    OpenApiSecurityScheme securityDefinition = new OpenApiSecurityScheme()
     {
-        Name = "Authorization",
+        Name = "Bearer",
+        BearerFormat = "JWT",
+        Scheme = "bearer",
+        Description = "Specify the authorization token.",
         In = ParameterLocation.Header,
-        Type = SecuritySchemeType.ApiKey,
-        Description = "Please insert JWT with Bearer into field"
-    });
+        Type = SecuritySchemeType.Http,
+    };
+    c.AddSecurityDefinition("jwt_auth", securityDefinition);
 
-    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    // Make sure swagger UI requires a Bearer token specified
+    OpenApiSecurityScheme securityScheme = new OpenApiSecurityScheme()
     {
+        Reference = new OpenApiReference()
         {
-            new OpenApiSecurityScheme
-        {
-            Reference = new OpenApiReference
-            {
-                Type = ReferenceType.SecurityScheme,
-                Id = "Bearer"
-            }
-        },
-            new string[] { }
+            Id = "jwt_auth",
+            Type = ReferenceType.SecurityScheme
         }
-    });
+    };
+    OpenApiSecurityRequirement securityRequirements = new OpenApiSecurityRequirement()
+{
+    {securityScheme, new string[] { }},
+};
+    c.AddSecurityRequirement(securityRequirements);
 
 });
 
@@ -123,6 +127,7 @@ builder.Services.AddAuthentication(x =>
         ValidateIssuerSigningKey = true,
         ValidateIssuer = false,
         ValidateAudience = false,
+        ClockSkew = TimeSpan.Zero
     };
 });
 

@@ -41,10 +41,11 @@ namespace film_api.Controllers
                 Issuer = "ARVATO.Issuer.Development",
                 Subject = new ClaimsIdentity(new Claim[] {
                     new Claim(ClaimTypes.NameIdentifier, Guid.NewGuid().ToString()),
-                    new Claim(ClaimTypes.Name, userName)
+                    new Claim(ClaimTypes.Name, userName),
                 }),
 
-                Expires = DateTime.UtcNow.AddSeconds(20),
+                
+                Expires = DateTime.UtcNow.AddMinutes(10),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
 
