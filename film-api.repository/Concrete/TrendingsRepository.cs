@@ -14,11 +14,19 @@ namespace film_api.repository.Concrete
             this.dbContext = dbContext;
         }
 
+        /// <summary>
+        /// Lists top 100 most viewed movies by popularity, it checks the first 1000 entities due to performance issues
+        /// </summary>
+        /// <returns>List<MovieDto></returns>
         public IEnumerable ListMostViewedMovies()
         {
-            return dbContext.Movies.Take(1000).OrderByDescending(x => x.Popularity).Take(10).ToList();
+            return dbContext.Movies.Take(1000).OrderByDescending(x => x.Popularity).Take(100).ToList();
         }
 
+        /// <summary>
+        /// Lists top-10-rated movies by VoteAverage
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable ListTopRatedMovies()
         {
             return dbContext.Movies.Take(1000).OrderByDescending(x => x.VoteAverage).Take(10).ToList();

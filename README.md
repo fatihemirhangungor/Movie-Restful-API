@@ -122,6 +122,8 @@ dotnet run
 
 # Warnings
 
-## - Be aware that app uses port = 5433 for postgresql - you might need to change that to 5432 since its the standard
+## - Be aware that app uses port = 5433 for postgresql - you might need to change that to 5432 since its the standard.
 
-## - Run your redis with port specified or you might get StackExchangeException error
+## - Run your redis with port specified or you might get StackExchangeException error.
+
+## - Some method's results are too big, therefore some methods returns limited number of entities. Because swagger crashes since dataset is very big for this application.

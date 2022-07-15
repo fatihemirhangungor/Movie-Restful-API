@@ -1,5 +1,4 @@
 ﻿using film_api.data.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -19,6 +18,14 @@ namespace film_api.Controllers
             _configuration = configuration;
         }
 
+        /// <summary>
+        /// Basic user login with parameters -> name, password
+        /// Creates a new user with given parameters and generates a token
+        /// Nothing kept
+        /// </summary>
+        /// <param name="UserName"></param>
+        /// <param name="Password"></param>
+        /// <returns></returns>
         [HttpGet("login")]
         public string Login(string UserName, string Password)
         {
@@ -30,6 +37,11 @@ namespace film_api.Controllers
             return "";
         }
 
+        /// <summary>
+        /// Method for generating JWT token
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <returns></returns>
         private string GenerateToken(string userName)
         {
             var tokenHandler = new JwtSecurityTokenHandler();

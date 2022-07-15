@@ -1,7 +1,7 @@
 using film_api.data.Models;
 using film_api.data.Redis;
-using film_api.repository.Abstract;
-using film_api.repository.Concrete;
+using film_api.repository.BaseRepository.Abstract;
+using film_api.repository.BaseRepository.Concrete;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -16,6 +16,8 @@ builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
+//Swagger settings with Authorization
 builder.Services.AddSwaggerGen(c =>
 {
     // Bearer token authentication
@@ -44,58 +46,7 @@ builder.Services.AddSwaggerGen(c =>
     {securityScheme, new string[] { }},
 };
     c.AddSecurityRequirement(securityRequirements);
-
 });
-
-
-/*
- 
- // Bearer token authentication
-    OpenApiSecurityScheme securityDefinition = new OpenApiSecurityScheme()
-    {
-        Name = "Bearer",
-        BearerFormat = "JWT",
-        Scheme = "bearer",
-        Description = "Specify the authorization token.",
-        In = ParameterLocation.Header,
-        Type = SecuritySchemeType.Http,
-    };
-    c.AddSecurityDefinition("jwt_auth", securityDefinition);
-
-    // Make sure swagger UI requires a Bearer token specified
-    OpenApiSecurityScheme securityScheme = new OpenApiSecurityScheme()
-    {
-        Reference = new OpenApiReference()
-        {
-            Id = "jwt_auth",
-            Type = ReferenceType.SecurityScheme
-        }
-    };
-    OpenApiSecurityRequirement securityRequirements = new OpenApiSecurityRequirement()
-{
-    {securityScheme, new string[] { }},
-};
-    c.AddSecurityRequirement(securityRequirements);
- 
- 
- 
- 
- 
- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //DB CONTEXT IMPLEMENTATION
 builder.Services.AddDbContext<DatabaseContext>(

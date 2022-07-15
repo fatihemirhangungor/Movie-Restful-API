@@ -14,30 +14,51 @@ namespace film_api.repository.BaseRepository.Concrete
             this.dbContext = dbContext;
         }
 
+        /// <summary>
+        /// Add new entity
+        /// </summary>
+        /// <param name="entity"></param>
         public void Create(T entity)
         {
             dbContext.Set<T>().Add(entity);
             dbContext.SaveChanges();
         }
 
+        /// <summary>
+        /// Delete entity
+        /// </summary>
+        /// <param name="entity"></param>
         public void Delete(T entity)
         {
             dbContext.Set<T>().Remove(entity);
             dbContext.SaveChanges();
         }
 
+        /// <summary>
+        /// Get
+        /// </summary>
+        /// <returns></returns>
         public IQueryable<T> Get()
         {
             //return dbContext.Set<T>().AsNoTracking();
             var result = dbContext.Set<T>().AsNoTracking();
-            return result.Take(5);
+            return result.Take(100);
         }
 
+        /// <summary>
+        /// Get by expression like (get by id)
+        /// </summary>
+        /// <param name="expression">Get by id</param>
+        /// <returns></returns>
         public IQueryable<T> Get(Expression<Func<T, bool>> expression)
         {
             return dbContext.Set<T>().Where(expression).AsNoTracking();
         }
 
+        /// <summary>
+        /// Update entity
+        /// </summary>
+        /// <param name="entity"></param>
         public void Update(T entity)
         {
             dbContext.Set<T>().Update(entity);
