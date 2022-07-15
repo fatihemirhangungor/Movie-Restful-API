@@ -117,6 +117,5 @@ dotnet run
 }
 ```
 
-<br>
-
 # Swagger Screenshot
+![Swagger](https://github.com/fatihemirhangungor/Movie-Restful-API/blob/main/Images/Swagger.png)
