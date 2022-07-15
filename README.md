@@ -67,53 +67,55 @@ dotnet run
 
 ```c#
  MovieDto{
+
     adult	string
-    nullable: true
+    
     belongsToCollection	string
-    nullable: true
+    
     budget	string
-    nullable: true
+    
     genres	string
-    nullable: true
+    
     homepage	string
-    nullable: true
+    
     id	integer($int64)
+
     imdbId	string
-    nullable: true
+    
     originalLanguage	string
-    nullable: true
+    
     originalTitle	string
-    nullable: true
+    
     overview	string
-    nullable: true
+    
     popularity	string
-    nullable: true
+    
     posterPath	string
-    nullable: true
+    
     productionCompanies	string
-    nullable: true
+    
     productionCountries	string
-    nullable: true
+    
     releaseDate	string
-    nullable: true
+    
     revenue	integer($int32)
-    nullable: true
+    
     runtime	number($double)
-    nullable: true
+    
     spokenLanguages	string
-    nullable: true
+    
     status	string
-    nullable: true
+    
     tagline	string
-    nullable: true
+    
     title	string
-    nullable: true
+    
     video	string
-    nullable: true
+    
     voteAverage	number($double)
-    nullable: true
+    
     voteCount	integer($int32)
-    nullable: true
+    
 }
 ```
 
