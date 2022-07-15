@@ -119,3 +119,9 @@ dotnet run
 
 # Swagger Screenshot
 ![Swagger](https://github.com/fatihemirhangungor/Movie-Restful-API/blob/main/Images/Swagger.png)
+
+# Warnings
+
+## - Be aware that app uses port = 5433 for postgresql - you might need to change that to 5432 since its the standard
+
+## - Run your redis with port specified or you might get StackExchangeException error
