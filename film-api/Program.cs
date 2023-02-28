@@ -49,9 +49,11 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 //DB CONTEXT IMPLEMENTATION
-builder.Services.AddDbContext<DatabaseContext>(
-    o => o.UseNpgsql(builder.Configuration.GetConnectionString("MoviesDB"))
-    );
+builder.Services.AddDbContext<DatabaseContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MSSQL_MOVIE")));
+//builder.Services.AddDbContext<DatabaseContext>(
+//    o => o.UseNpgsql(builder.Configuration.GetConnectionString("MoviesDB"))
+//    );
 
 //REDIS IMPLEMENT
 builder.Services.AddSingleton<IRedisHelper, RedisHelper>();

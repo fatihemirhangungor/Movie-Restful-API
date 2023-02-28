@@ -23,7 +23,7 @@ namespace film_api.repository.Concrete
         /// <returns>List<string> genres</returns>
         public IEnumerable ListGenres()
         {
-            var listOfGenreLists = dbContext.Movies.Select(x => x.Genres);
+            var listOfGenreLists = dbContext.Movies.Select(x => x.Genres).ToList();
             foreach (var genreList in listOfGenreLists)
             {
                 var genres = JsonConvert.DeserializeObject<List<GenreDto>>(genreList);

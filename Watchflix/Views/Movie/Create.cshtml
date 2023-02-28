@@ -1,0 +1,148 @@
+﻿@model film_api.data.Models.MovieDto
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>MovieDto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Adult" class="control-label"></label>
+                <input asp-for="Adult" class="form-control" />
+                <span asp-validation-for="Adult" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BelongsToCollection" class="control-label"></label>
+                <input asp-for="BelongsToCollection" class="form-control" />
+                <span asp-validation-for="BelongsToCollection" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Budget" class="control-label"></label>
+                <input asp-for="Budget" class="form-control" />
+                <span asp-validation-for="Budget" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Genres" class="control-label"></label>
+                <input asp-for="Genres" class="form-control" />
+                <span asp-validation-for="Genres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Homepage" class="control-label"></label>
+                <input asp-for="Homepage" class="form-control" />
+                <span asp-validation-for="Homepage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImdbId" class="control-label"></label>
+                <input asp-for="ImdbId" class="form-control" />
+                <span asp-validation-for="ImdbId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OriginalLanguage" class="control-label"></label>
+                <input asp-for="OriginalLanguage" class="form-control" />
+                <span asp-validation-for="OriginalLanguage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OriginalTitle" class="control-label"></label>
+                <input asp-for="OriginalTitle" class="form-control" />
+                <span asp-validation-for="OriginalTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Overview" class="control-label"></label>
+                <input asp-for="Overview" class="form-control" />
+                <span asp-validation-for="Overview" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Popularity" class="control-label"></label>
+                <input asp-for="Popularity" class="form-control" />
+                <span asp-validation-for="Popularity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PosterPath" class="control-label"></label>
+                <input asp-for="PosterPath" class="form-control" />
+                <span asp-validation-for="PosterPath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductionCompanies" class="control-label"></label>
+                <input asp-for="ProductionCompanies" class="form-control" />
+                <span asp-validation-for="ProductionCompanies" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductionCountries" class="control-label"></label>
+                <input asp-for="ProductionCountries" class="form-control" />
+                <span asp-validation-for="ProductionCountries" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReleaseDate" class="control-label"></label>
+                <input asp-for="ReleaseDate" class="form-control" />
+                <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Revenue" class="control-label"></label>
+                <input asp-for="Revenue" class="form-control" />
+                <span asp-validation-for="Revenue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Runtime" class="control-label"></label>
+                <input asp-for="Runtime" class="form-control" />
+                <span asp-validation-for="Runtime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpokenLanguages" class="control-label"></label>
+                <input asp-for="SpokenLanguages" class="form-control" />
+                <span asp-validation-for="SpokenLanguages" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tagline" class="control-label"></label>
+                <input asp-for="Tagline" class="form-control" />
+                <span asp-validation-for="Tagline" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Video" class="control-label"></label>
+                <input asp-for="Video" class="form-control" />
+                <span asp-validation-for="Video" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VoteAverage" class="control-label"></label>
+                <input asp-for="VoteAverage" class="form-control" />
+                <span asp-validation-for="VoteAverage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VoteCount" class="control-label"></label>
+                <input asp-for="VoteCount" class="form-control" />
+                <span asp-validation-for="VoteCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

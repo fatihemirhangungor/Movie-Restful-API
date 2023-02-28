@@ -26,3 +26,17 @@ D:\repos\Movie-Restful-API\film-api.data\obj\Debug\net6.0\refint\film-api.data.d
 D:\repos\Movie-Restful-API\film-api.data\obj\Debug\net6.0\film-api.data.pdb
 D:\repos\Movie-Restful-API\film-api.data\obj\Debug\net6.0\film-api.data.genruntimeconfig.cache
 D:\repos\Movie-Restful-API\film-api.data\obj\Debug\net6.0\ref\film-api.data.dll
+C:\Users\PC\repos\Movie-Restful-API\film-api.data\bin\Debug\net6.0\film-api.data.deps.json
+C:\Users\PC\repos\Movie-Restful-API\film-api.data\bin\Debug\net6.0\film-api.data.runtimeconfig.json
+C:\Users\PC\repos\Movie-Restful-API\film-api.data\bin\Debug\net6.0\film-api.data.dll
+C:\Users\PC\repos\Movie-Restful-API\film-api.data\bin\Debug\net6.0\film-api.data.pdb
+C:\Users\PC\repos\Movie-Restful-API\film-api.data\obj\Debug\net6.0\film-api.data.csproj.AssemblyReference.cache
+C:\Users\PC\repos\Movie-Restful-API\film-api.data\obj\Debug\net6.0\film-api.data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\repos\Movie-Restful-API\film-api.data\obj\Debug\net6.0\film-api.data.AssemblyInfoInputs.cache
+C:\Users\PC\repos\Movie-Restful-API\film-api.data\obj\Debug\net6.0\film-api.data.AssemblyInfo.cs
+C:\Users\PC\repos\Movie-Restful-API\film-api.data\obj\Debug\net6.0\film-api.data.csproj.CoreCompileInputs.cache
+C:\Users\PC\repos\Movie-Restful-API\film-api.data\obj\Debug\net6.0\film-api.data.dll
+C:\Users\PC\repos\Movie-Restful-API\film-api.data\obj\Debug\net6.0\refint\film-api.data.dll
+C:\Users\PC\repos\Movie-Restful-API\film-api.data\obj\Debug\net6.0\film-api.data.pdb
+C:\Users\PC\repos\Movie-Restful-API\film-api.data\obj\Debug\net6.0\film-api.data.genruntimeconfig.cache
+C:\Users\PC\repos\Movie-Restful-API\film-api.data\obj\Debug\net6.0\ref\film-api.data.dll
